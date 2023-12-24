@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Caveat&display=swap">
+  <title>Feliz Navidad</title>
+  <style>
+    /* Agrega estilos personalizados aquí si es necesario */
+    #play-button {
+      display: none; /* Inicialmente oculto */
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #0c2340;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    #long-text {
+      font-size: 1.5em;
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Agrega la etiqueta de audio para la canción de fondo con autoplay -->
+  <audio id="background-music" autoplay loop>
+    <source src="navidad.mp3" type="audio/mp3">
+    Tu navegador no soporta el elemento de audio.
+  </audio>
+
+  <!-- Botón de reproducción -->
+  <button id="play-button">Reproducir</button>
+
+  <div class="snowfall"></div>
+  <div class="content">
+    <div class="christmas-title">
+      <h1>Feliz Navidad Meme</h1> <br>
+      <h1>Te Amo</h1>
+      <img class="santa-hat" src="santa-hat.png" alt="Gorro de Navidad">
+    </div>
+    <div class="gallery">
+      <!-- Imágenes de la galería -->
+      <img src="foto2.jpg" alt="Imagen 1">
+      <img src="foto3.jpg" alt="Imagen 2">
+      <img src="foto4.jpg" alt="Imagen 3">
+      <img src="foto5.jpg" alt="Imagen 4">
+      <img src="foto6.jpg" alt="Imagen 5">
+      <img src="foto7.jpg" alt="Imagen 6">
+      <img src="foto8.jpg" alt="Imagen 7">
+      <img src="foto9.jpg" alt="Imagen 8">
+      <img src="foto10.jpg" alt="Imagen 9">
+    </div>
+    <div class="bottom-image">
+      <img src="foto1.jpg" alt="Imagen inferior">
+      <p id="long-text">
+        Feliz navidad, perdón si no soy el mas demostrativo, sabes que lo intento ser a mi manera y esta es una de ellas.  <br>
+        Gracias por ser mi compañera en todo, por estar siempre que lo necesito y aguantarte mis boludeces. <br>
+        Sos la persona mas increíble que conocí en toda mi vida, siento que con vos a mi lado puedo lograr lo que sea. <br>
+        No se que hice para merecerte, lo que si se es que voy a hacer lo imposible para nunca perderte. <br>
+          Espero que te guste mi regalito, lo hice con todo el amor del mundo, Te amo meme.
+      </p>
+    </div>
+  </div>
+  <script src="snow.js"></script>
+  <script>
+    // Muestra el botón de reproducción si la reproducción automática no está permitida
+    document.addEventListener('DOMContentLoaded', function () {
+      const audio = document.getElementById('background-music');
+      const playButton = document.getElementById('play-button');
+
+      // Verifica si la reproducción automática está permitida
+      if (audio.paused) {
+        playButton.style.display = 'block';
+      }
+
+      // Agrega un evento al botón para reproducir la música cuando se hace clic
+      playButton.addEventListener('click', function () {
+        audio.play();
+        playButton.style.display = 'none';
+      });
+    });
+  </script>
+</body>
+</html>
