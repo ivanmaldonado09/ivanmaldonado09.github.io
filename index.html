@@ -28,14 +28,10 @@
   </style>
 </head>
 <body>
-  <!-- Agrega la etiqueta de audio para la canción de fondo con autoplay -->
-  <audio id="background-music" autoplay loop>
+  <audio autoplay loop>
     <source src="navidad.mp3" type="audio/mp3">
     Tu navegador no soporta el elemento de audio.
   </audio>
-
-  <!-- Botón de reproducción -->
-  <button id="play-button">Reproducir</button>
 
   <div class="snowfall"></div>
   <div class="content">
@@ -68,23 +64,5 @@
     </div>
   </div>
   <script src="snow.js"></script>
-  <script>
-    // Muestra el botón de reproducción si la reproducción automática no está permitida
-    document.addEventListener('DOMContentLoaded', function () {
-      const audio = document.getElementById('background-music');
-      const playButton = document.getElementById('play-button');
-
-      // Verifica si la reproducción automática está permitida
-      if (audio.paused) {
-        playButton.style.display = 'block';
-      }
-
-      // Agrega un evento al botón para reproducir la música cuando se hace clic
-      playButton.addEventListener('click', function () {
-        audio.play();
-        playButton.style.display = 'none';
-      });
-    });
-  </script>
 </body>
 </html>
